@@ -18,6 +18,8 @@ fun main(args: Array<String>) {
 
     val email1 = getEmail(1)
     email1?.let { e -> sendEmail(e) }
+    getEmail(2)?.let{sendEmail(it)}
+//    getEmail(2).let{sendEmail(it)}   ERROR!
 
     val email2: Unit? = getEmail(2)?.let { sendEmail(it)}
 
@@ -28,6 +30,9 @@ fun main(args: Array<String>) {
     mylambda(23, { a, b -> "lb1: pars :$a,$b"})
     mylambda(23) { a, b -> "lb2: pars :$a,$b"}
     mylambda2 {"lb2: pars"}
+
+    repeat(times = 10) { println("it = ${it}") }
+
 }
 
 
