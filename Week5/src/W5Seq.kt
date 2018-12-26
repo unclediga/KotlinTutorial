@@ -10,6 +10,16 @@ fun f(i: Int): Boolean {
     return i % 2 == 0
 }
 
+fun mySequence() = sequence {
+    println("yield one element")
+    yield(1)
+    println("yield a range")
+    yieldAll(3..5)
+    println("yield a list")
+    yieldAll(listOf(7, 9))
+}
+
+
 fun main(args: Array<String>) {
     val list = listOf(1, 2, 3, 4)
     list.map(::m).filter(::f)
@@ -51,6 +61,22 @@ fun main(args: Array<String>) {
     val seq = generateSequence { Random.nextInt(10).takeIf { it > 0 } }
     println("seq=${seq.toList()}")
 
+    println ("How many times the phrases \"Generating element...\" will be printed?")
+
+    val numbers = generateSequence(3) { n ->
+        println("Generating element...")
+        (n + 1).takeIf { it < 7 }
+    }
+    println(numbers.first())
+
+
+
+
+    println("How many times the phrases starting with yield will be printed?")
+    println(mySequence()
+            .map { it * it }
+            .filter { it > 10 }
+            .take(1))
 
 }
 
