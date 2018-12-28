@@ -5,7 +5,7 @@ Your task is to implement two games:
 [Game of Fifteen](https://en.wikipedia.org/wiki/15_puzzle).
 Use your implementation of the `GameBoard` interface from the previous task. 
 
-After implementing the game you can play it yourself running `main` function in 
+After implementing the game you can play it yourself running `coursera.week5.main` function in 
 `ui/PlayGame2048` or `ui/PlayGameOfFifteen`.
 
 ### Game 2048

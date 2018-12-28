@@ -14,7 +14,7 @@ fun playBullsAndCows(
 ) {
     val scanner = Scanner(System.`in`)
     var evaluation: Evaluation
-
+    println("secret=$secret")
     do {
         print("Your guess: ")
         var guess = scanner.next()
